@@ -9,7 +9,7 @@ const Community = () => {
       <div className="max-w-7xl mx-auto container-padding">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left Illustration */}
-          <div className="flex justify-center items-center order-2 md:order-1 lg:order-1">
+          <div className="flex justify-center items-center order-1 md:order-1 lg:order-1">
             <img
               src={IMAGES.community.illustration}
               alt="Community partnership illustration"
@@ -18,7 +18,7 @@ const Community = () => {
           </div>
 
           {/* Right Content */}
-          <div className="flex flex-col justify-center order-1 md:order-2 lg:order-2">
+          <div className="flex flex-col justify-center order-2 md:order-2 lg:order-2">
             <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
               Partnership
             </p>

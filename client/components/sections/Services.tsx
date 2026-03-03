@@ -78,7 +78,7 @@ const Services = () => {
               className="bg-white rounded-lg border border-gray-100 p-8 hover:shadow-lg transition-shadow"
             >
               {/* Service Icon */}
-              <div className="mb-6 h-24 flex items-center justify-center bg-gray-50 rounded-lg">
+              <div className="mb-6 h-24 flex items-center justify-center rounded-lg">
                 <img
                   src={service.icon}
                   alt={service.name}

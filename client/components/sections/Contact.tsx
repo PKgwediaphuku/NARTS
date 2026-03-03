@@ -66,7 +66,7 @@ const Contact = () => {
 
           {/* Email Card */}
           <a
-            href="mailto:info@nasarts.co.za"
+            href="mailto:order@nasarts.co.za"
             className="bg-white rounded-3xl border border-gray-100 p-8 text-center hover:shadow-lg transition-shadow"
           >
             <div className="flex justify-center mb-4">
@@ -75,7 +75,7 @@ const Contact = () => {
               </div>
             </div>
             <h3 className="font-bold text-gray-900 mb-2">Email</h3>
-            <p className="text-gray-600">info@nasarts.co.za</p>
+            <p className="text-gray-600">order@nasarts.co.za</p>
           </a>
 
           {/* Location Card */}
@@ -113,7 +113,7 @@ const Contact = () => {
           {/* Right Side - Form */}
           <div className="lg:col-span-3">
             <form
-              action="https://formsubmit.co/info@nasarts.co.za"
+              action="https://formsubmit.co/order@nasarts.co.za"
               method="POST"
               onSubmit={handleSubmit}
               className="space-y-6"
