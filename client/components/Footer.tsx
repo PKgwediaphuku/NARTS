@@ -20,25 +20,29 @@ const Footer = () => {
           </p>
           <span className="text-gray-400">|</span>
           <a
-            href="#"
+            href="https://drive.google.com/file/d/1M92uqFzAJm2u5PPCJoCfdmJ7VjCunk_A/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-gray-600 hover:text-brand-purple transition-colors"
           >
             Terms and Conditions
           </a>
           <span className="text-gray-400">|</span>
           <a
-            href="#"
+            href="https://drive.google.com/file/d/16_PG4KgEgHrRTWnPSPh82ILo8wplbOVO/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-gray-600 hover:text-brand-purple transition-colors"
           >
             CSI Policy
           </a>
           <span className="text-gray-400">|</span>
-          <a
-            href="#"
-            className="text-gray-600 hover:text-brand-purple transition-colors"
+          <span
+            className="text-gray-400 cursor-not-allowed"
+            aria-disabled="true"
           >
             Privacy Policy
-          </a>
+          </span>
         </div>
       </div>
     </footer>
