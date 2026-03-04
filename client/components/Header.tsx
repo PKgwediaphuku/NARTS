@@ -53,7 +53,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation with Gloss Effect - Always visible */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-8 bg-white/30 backdrop-blur-md rounded-full px-8 lg:px-10 py-4 border border-white/50 transition-all duration-300 font-medium flex-shrink">
+          <div className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-7 bg-white/30 backdrop-blur-md rounded-full px-5 lg:px-7 xl:px-10 py-4 border border-white/50 transition-all duration-300 font-medium flex-shrink">
             {navItems.map((item) => (
               <button
                 key={item.label}
@@ -65,10 +65,10 @@ const Header = () => {
             ))}
           </div>
 
-          {/* Contact Button - Desktop only */}
+          {/* Contact Button - Visible on normal desktop screens */}
           <button
             onClick={() => window.open('https://api.whatsapp.com/send/?phone=27742448556&text&type=phone_number&app_absent=0', '_blank')}
-            className={`btn-primary hidden lg:block transition-all duration-300 flex-shrink-0 ${
+            className={`btn-primary hidden md:inline-flex transition-all duration-300 flex-shrink-0 ${
               !isScrolled ? "opacity-100 visible" : "opacity-0 invisible"
             }`}
           >
@@ -102,7 +102,12 @@ const Header = () => {
                 {item.label}
               </button>
             ))}
-            <button className="btn-primary w-full">Get in Touch</button>
+            <button
+              onClick={() => window.open('https://api.whatsapp.com/send/?phone=27742448556&text&type=phone_number&app_absent=0', '_blank')}
+              className="btn-primary w-full"
+            >
+              Get in Touch
+            </button>
           </div>
         </div>
       )}
