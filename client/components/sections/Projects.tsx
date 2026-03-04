@@ -7,6 +7,8 @@ const projects = [
   { id: 2, image: IMAGES.projects.project2, title: "Project 2" },
   { id: 3, image: IMAGES.projects.project3, title: "Project 3" },
   { id: 4, image: IMAGES.projects.project4, title: "Project 4" },
+  { id: 5, image: IMAGES.projects.project5, title: "Soweto Derby" },
+  { id: 6, image: IMAGES.projects.project6, title: "Untitled Phily" },
 ];
 
 const Projects = () => {
@@ -183,7 +185,7 @@ const Projects = () => {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(calc(-320px * 4 - 1.5rem * 4));
+            transform: translateX(calc(-320px * ${projects.length} - 1.5rem * ${projects.length}));
           }
         }
 

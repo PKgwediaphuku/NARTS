@@ -45,6 +45,8 @@ export const IMAGES = {
       "https://api.builder.io/api/v1/image/assets%2F624c136585d54b15b0e5a99ac392cf54%2F7a458a178f2e408da8ad7cfe48e1a232",
     project4:
       "https://api.builder.io/api/v1/image/assets%2F624c136585d54b15b0e5a99ac392cf54%2F774447e945df49009b361abfbdb94e97",
+    project5: "/images/projects/soweto-derby.jpg",
+    project6: "/images/projects/untitled-phily.jpg",
   },
 
   // Community Partnership
