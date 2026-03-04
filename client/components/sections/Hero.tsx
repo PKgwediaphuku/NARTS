@@ -15,7 +15,7 @@ const Hero = () => {
               <span className="text-highlight">Creative</span> Mind!
             </h1>
 
-            <p className="text-gray-600 text-lg md:text-xl mb-8 leading-relaxed">
+            <p className="text-gray-600 text-lg mb-6 leading-relaxed">
               Welcome to NArts (Pty) Ltd, were creativity meets customer centricity. We
               craft unique designs tailored to your needs.
             </p>

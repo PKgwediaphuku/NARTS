@@ -20,7 +20,7 @@ const Community = () => {
           {/* Right Content */}
           <div className="flex flex-col justify-center order-2 md:order-2 lg:order-2">
             <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
-              Partnership
+              Our Contribution
             </p>
 
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
