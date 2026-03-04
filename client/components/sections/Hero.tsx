@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-white pt-20"
+      className="min-h-screen flex items-center justify-center bg-white pt-20 border-b border-gray-200"
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-16 md:py-24 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
@@ -20,7 +20,15 @@ const Hero = () => {
               craft unique designs tailored to your needs.
             </p>
 
-            <button className="btn-primary w-fit">
+            <button
+              className="btn-primary w-fit"
+              onClick={() => {
+                const element = document.getElementById("contact");
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            >
               Let's bring your ideas to life
             </button>
           </div>

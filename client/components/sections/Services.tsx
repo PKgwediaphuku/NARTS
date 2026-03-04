@@ -57,7 +57,7 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="bg-white section-spacing"
+      className="bg-white section-spacing border-b border-gray-200"
     >
       <div className="max-w-7xl mx-auto container-padding">
         {/* Section Header */}
@@ -78,11 +78,11 @@ const Services = () => {
               className="bg-white rounded-lg border border-gray-100 p-8 hover:shadow-lg transition-shadow"
             >
               {/* Service Icon */}
-              <div className="mb-6 h-24 flex items-center justify-center rounded-lg">
+              <div className="mb-6 h-32 flex items-center justify-center rounded-lg">
                 <img
                   src={service.icon}
                   alt={service.name}
-                  className="h-20 w-20 object-contain"
+                  className="h-28 w-28 object-contain"
                 />
               </div>
 

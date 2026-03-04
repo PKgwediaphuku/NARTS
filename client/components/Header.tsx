@@ -65,10 +65,10 @@ const Header = () => {
             ))}
           </div>
 
-          {/* Contact Button - Fades out on scroll */}
+          {/* Contact Button - Desktop only */}
           <button
-            onClick={() => scrollToSection("contact")}
-            className={`btn-primary hidden md:block transition-all duration-300 flex-shrink-0 ${
+            onClick={() => window.open('https://api.whatsapp.com/send/?phone=27742448556&text&type=phone_number&app_absent=0', '_blank')}
+            className={`btn-primary hidden lg:block transition-all duration-300 flex-shrink-0 ${
               !isScrolled ? "opacity-100 visible" : "opacity-0 invisible"
             }`}
           >

@@ -55,7 +55,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="bg-white section-spacing overflow-hidden"
+      className="bg-white section-spacing overflow-hidden border-b border-gray-200"
     >
       <div className="max-w-7xl mx-auto container-padding mb-12">
         {/* Section Header */}
@@ -75,7 +75,7 @@ const Projects = () => {
           {duplicatedProjects.map((project, index) => (
             <div
               key={`${project.id}-${index}`}
-              className="flex-shrink-0 w-96 h-[480px] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow"
+              className="flex-shrink-0 w-80 h-96 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow"
             >
               <div className="relative w-full h-full group cursor-pointer" onClick={() => handleProjectClick(index)}>
                 <img
@@ -94,7 +94,7 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Mobile Carousel Container - Manual controls with drag/swipe */}
+      {/* Mobile Carousel Container - Draggable continuous scroll like desktop */}
       <div
         className="relative overflow-hidden bg-white py-8 md:hidden select-none cursor-grab active:cursor-grabbing"
         onMouseDown={handleDragStart}
@@ -102,17 +102,12 @@ const Projects = () => {
         onTouchStart={handleDragStart}
         onTouchEnd={handleDragEnd}
       >
-        <div className="flex gap-6 justify-center pointer-events-none">
-          {projects.map((project, index) => (
+        <div className="flex gap-6 animate-scroll-left">
+          {duplicatedProjects.map((project, index) => (
             <div
-              key={`${project.id}-mobile`}
-              className={`flex-shrink-0 w-72 h-80 rounded-xl overflow-hidden shadow-lg transition-all cursor-pointer group pointer-events-auto ${
-                index === selectedProjectIndex ? "ring-2 ring-brand-purple" : "opacity-50"
-              }`}
-              onClick={() => {
-                setSelectedProjectIndex(index);
-                setTimeout(() => setIsModalOpen(true), 100);
-              }}
+              key={`${project.id}-${index}`}
+              className="flex-shrink-0 w-64 h-72 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow cursor-pointer group"
+              onClick={() => handleProjectClick(index)}
             >
               <div className="relative w-full h-full">
                 <img
@@ -128,29 +123,6 @@ const Projects = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Mobile Navigation Controls */}
-        <div className="flex items-center justify-between mt-6 px-4">
-          <button
-            onClick={handlePrevProject}
-            className="bg-brand-purple hover:bg-purple-900 text-white rounded-full p-2 transition-colors"
-            aria-label="Previous project"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-
-          <span className="text-sm text-gray-500">
-            {selectedProjectIndex + 1} / {projects.length}
-          </span>
-
-          <button
-            onClick={handleNextProject}
-            className="bg-brand-purple hover:bg-purple-900 text-white rounded-full p-2 transition-colors"
-            aria-label="Next project"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
         </div>
       </div>
 
@@ -211,12 +183,12 @@ const Projects = () => {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(calc(-384px * 4 - 1.5rem * 4));
+            transform: translateX(calc(-320px * 4 - 1.5rem * 4));
           }
         }
 
         .animate-scroll-left {
-          animation: scroll-left 50s linear infinite;
+          animation: scroll-left 40s linear infinite;
         }
       `}</style>
     </section>

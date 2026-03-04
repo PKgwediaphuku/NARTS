@@ -4,7 +4,7 @@ const Community = () => {
   return (
     <section
       id="partnerships"
-      className="bg-white section-spacing"
+      className="bg-white section-spacing border-b border-gray-200"
     >
       <div className="max-w-7xl mx-auto container-padding">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
