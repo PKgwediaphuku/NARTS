@@ -28,7 +28,7 @@ const Community = () => {
             </h2>
 
             <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-              At NasArts, we believe in giving back. That's why each month we partner with local NPOs, schools, and social initiatives that are making a difference. Through our pro bono creative services, we help bring their meaningful ideas to life.
+              At NasArts, we believe in giving back. That's why each month we partner with local NPOs, schools, and social initiatives that are making a difference. Through our pro bono creative services, we help amplify their cause.
             </p>
 
             <button
