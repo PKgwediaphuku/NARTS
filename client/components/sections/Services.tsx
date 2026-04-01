@@ -14,28 +14,28 @@ const services: ServiceCard[] = [
     name: "Brand Design",
     description: "",
     icon: IMAGES.services.corelDraw,
-    features: ["Logo Design", "Brand Identity", "Business Cards", "Packaging Design"],
+    features: ["Logo Design", "Brand Dtyle Guide", "Business Cards", "Packaging Design", "Labels & Stickers", "Letterhead"],
   },
   {
     id: 2,
     name: "Print Design",
     description: "",
     icon: IMAGES.services.print,
-    features: ["Flyers & Posters", "Billboards & Banners", "Brochures, Catalogs & Menus", "Invoices & Forms", "Calendars & Book covers"],
+    features: ["Flyers & Posters", "Billboards & Banners", "Brochures & Catalogs", "Menus", "Invoices & Forms", "Certificates:", "Calendars & Book covers",  "Infographics"],
   },
   {
     id: 3,
     name: "Art & Illustration",
     description: "",
     icon: IMAGES.services.aiIllustration,
-    features: ["Digital Portraits", "Hand-Drawn Art", "Custom Digital Illustrations"],
+    features: ["Digital Portraits", "Traditional Sketches", "Digital Illustrations"],
   },
   {
     id: 4,
     name: "Motion Graphics",
     description: "",
     icon: IMAGES.services.afterEffects,
-    features: ["Logo Animation", "2D Animation", "Product & Service Ads", "Explainer Videos"],
+    features: ["Logo Animation", "2D Animation", "Explainer Videos"],
   },
   {
     id: 5,
@@ -49,7 +49,7 @@ const services: ServiceCard[] = [
     name: "Photography",
     description: "",
     icon: IMAGES.services.photography,
-    features: ["Aerial", "Events", "Graduation", "Sports", "Studio", "Weddings"],
+    features: ["Aerial", "Events", "Graduation", "Sports", "InStudio", "Weddings", "Photomanipulation", "Colour Correction and Colour Grading],
   },
 ];
 
