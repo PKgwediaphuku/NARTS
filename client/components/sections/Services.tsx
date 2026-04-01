@@ -21,7 +21,7 @@ const services: ServiceCard[] = [
     name: "Print Design",
     description: "",
     icon: IMAGES.services.print,
-    features: ["Flyers & Posters", "Billboards & Banners", "Brochures & Catalogs", "Menus", "Invoices & Forms", "Certificates:", "Calendars & Book covers",  "Infographics"],
+    features: ["Flyers & Posters", "Billboards & Banners", "Brochures & Catalogs", "Menus", "Invoices & Forms", "Certificates", "Calendars & Book covers",  "Infographics"],
   },
   {
     id: 3,
