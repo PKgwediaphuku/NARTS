@@ -28,7 +28,7 @@ const About = () => {
             </h2>
 
             <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-              We are a creative house founded by designer Malebo Kgwediaphuku. We exist to transform ideas into visually stunning realities, be it from individuals, businesses or organizations. Rooted in creativity, innovation, customer focus, and teamwork, we craft tailored solutions across art and illustrations, print and logo design, and motion graphics.
+              We are a creative house founded by designer Malebo Kgwediaphuku, serving as a one-stop solution for brands, individuals, businesses, and organizations seeking creative services. Rooted in creativity, innovation, customer focus, and teamwork, we craft tailored solutions across art and illustration, print and brand design, motion graphics, web design, and photography.
             </p>
           </div>
         </div>
