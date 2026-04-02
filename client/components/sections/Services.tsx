@@ -49,7 +49,7 @@ const services: ServiceCard[] = [
     name: "Photography",
     description: "",
     icon: IMAGES.services.photography,
-    features: ["Aerial", "Events", "Graduation", "Sports", "InStudio", "Weddings", "Photomanipulation", "Colour Correction", "Colour Grading"],
+    features: ["Aerial", "Events", "Graduation", "Sports", "InStudio", "Weddings", "PhotoManipulation", "Colour Correction", "Colour Grading"],
   },
 ];
 
