@@ -42,7 +42,7 @@ const services: ServiceCard[] = [
     name: "Web Design",
     description: "",
     icon: IMAGES.services.webDesign,
-    features: ["E-commerce", "Business sites", "Blog", "Portfolio", "News & Magazine", "Educational", "Forum", "Landing Page"],
+    features: ["E-commerce", "Blog", "Portfolio", "News", "Educational", "Forum", "Landing Page"],
   },
   {
     id: 6,
