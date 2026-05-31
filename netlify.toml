@@ -3,6 +3,12 @@
   functions = "netlify/functions"
   publish = "dist/spa"
 
+[images]
+remote_images = [
+  "https://cdn\\.builder\\.io/.*",
+  "https://api\\.builder\\.io/.*"
+]
+
 
 [functions]
   external_node_modules = ["express"]

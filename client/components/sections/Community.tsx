@@ -1,4 +1,5 @@
 import { IMAGES } from "@/config/images";
+import { netlifyImage } from "@/lib/image";
 
 const Community = () => {
   return (
@@ -11,9 +12,10 @@ const Community = () => {
           {/* Left Illustration */}
           <div className="flex justify-center items-center order-1 md:order-1 lg:order-1">
             <img
-              src={IMAGES.community.illustration}
+              src={netlifyImage(IMAGES.community.illustration, { w: 1000 })}
               alt="Community partnership illustration"
               className="w-full h-auto max-w-[500px]"
+              loading="lazy"
             />
           </div>
 

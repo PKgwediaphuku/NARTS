@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { IMAGES } from "@/config/images";
+import { netlifyImage } from "@/lib/image";
 
 const projects = [
   { id: 1, image: IMAGES.projects.project1, title: "Project 1" },
@@ -81,9 +82,10 @@ const Projects = () => {
             >
               <div className="relative w-full h-full group cursor-pointer" onClick={() => handleProjectClick(index)}>
                 <img
-                  src={project.image}
+                  src={netlifyImage(project.image, { w: 640, h: 768, fit: "cover" })}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/20 transition-colors rounded-xl">
                   <span className="text-white opacity-0 group-hover:opacity-100 text-sm font-semibold transition-opacity">
@@ -113,9 +115,10 @@ const Projects = () => {
             >
               <div className="relative w-full h-full">
                 <img
-                  src={project.image}
+                  src={netlifyImage(project.image, { w: 512, h: 576, fit: "cover" })}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform group-active:scale-105"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-active:bg-black/20 transition-colors rounded-xl">
                   <span className="text-white opacity-0 group-active:opacity-100 text-sm font-semibold transition-opacity">
@@ -149,7 +152,7 @@ const Projects = () => {
             {/* Image Container */}
             <div className="flex items-center justify-center w-full h-full px-4 py-12">
               <img
-                src={projects[selectedProjectIndex].image}
+                src={netlifyImage(projects[selectedProjectIndex].image, { w: 1600 })}
                 alt={projects[selectedProjectIndex].title}
                 className="max-w-full max-h-[calc(100vh-120px)] object-contain rounded-lg shadow-2xl"
               />

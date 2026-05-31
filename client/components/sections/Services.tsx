@@ -1,4 +1,6 @@
 import { IMAGES } from "@/config/images";
+import { useNavigate } from "react-router-dom";
+import { netlifyImage } from "@/lib/image";
 
 interface ServiceCard {
   id: number;
@@ -6,6 +8,7 @@ interface ServiceCard {
   description: string;
   icon: string;
   features: string[];
+  link?: string;
 }
 
 const services: ServiceCard[] = [
@@ -50,10 +53,13 @@ const services: ServiceCard[] = [
     description: "",
     icon: IMAGES.services.photography,
     features: ["Aerial", "Events", "Graduation", "Sports", "InStudio", "Weddings", "PhotoManipulation", "Colour Correction", "Colour Grading"],
+    link: "/photography",
   },
 ];
 
 const Services = () => {
+  const navigate = useNavigate();
+
   return (
     <section
       id="services"
@@ -75,14 +81,16 @@ const Services = () => {
           {services.map((service) => (
             <div
               key={service.id}
-              className="bg-white rounded-lg border border-gray-100 p-8 hover:shadow-lg transition-shadow"
+              onClick={service.link ? () => navigate(service.link!) : undefined}
+              className={`bg-white rounded-lg border border-gray-100 p-8 hover:shadow-lg transition-shadow ${service.link ? "cursor-pointer" : ""}`}
             >
               {/* Service Icon */}
               <div className="mb-6 h-32 flex items-center justify-center rounded-lg">
                 <img
-                  src={service.icon}
+                  src={netlifyImage(service.icon, { w: 224 })}
                   alt={service.name}
                   className="h-28 w-28 object-contain"
+                  loading="lazy"
                 />
               </div>
 
@@ -101,6 +109,12 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
+
+              {service.link && (
+                <p className="mt-4 text-sm font-semibold text-brand-purple">
+                  View Portfolio &rarr;
+                </p>
+              )}
             </div>
           ))}
         </div>
