@@ -1,4 +1,5 @@
 import { IMAGES } from "@/config/images";
+import { netlifyImage } from "@/lib/image";
 
 const Hero = () => {
   return (
@@ -36,7 +37,7 @@ const Hero = () => {
           {/* Right Illustration */}
           <div className="flex justify-center items-center order-1 md:order-1 lg:order-2">
             <img
-              src={IMAGES.hero.illustration}
+              src={netlifyImage(IMAGES.hero.illustration, { w: 1000 })}
               alt="Creative illustration"
               className="w-full h-auto max-w-[500px]"
             />
