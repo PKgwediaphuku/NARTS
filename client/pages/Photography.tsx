@@ -145,7 +145,7 @@ const Photography = () => {
           {/* Title */}
           <div className="text-center mb-10">
             <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
-              Portfolio
+            
             </p>
             <h1 className="text-4xl md:text-5xl font-bold">
               Our <span className="text-highlight">Portfolio</span>
