@@ -18,7 +18,8 @@ interface ColourEdit {
 
 const gradPhotos: Photo[] = [
   { src: "/images/photography/photo-1.jpg", alt: "Graduation" },
-];
+]; "/images/photography/20260417171229_IMG_1394.jpg.jpeg", 
+  
 
 const sportsPhotos: Photo[] = [
   { src: "/images/photography/photo-2.jpg", alt: "Sports" },
