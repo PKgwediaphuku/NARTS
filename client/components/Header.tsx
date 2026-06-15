@@ -58,14 +58,16 @@ const Header = () => {
   return (
     <header className="fixed top-0 w-full z-50">
       {/* Header Bar - Background changes on scroll */}
-      <div className={`transition-all duration-300 py-5 md:py-6 ${
-        !isScrolled ? "bg-white border-b border-gray-100" : "bg-transparent"
+      <div className={`transition-colors duration-500 ease-in-out py-5 md:py-6 border-b ${
+        !isScrolled
+          ? "bg-white border-gray-100"
+          : "bg-transparent border-transparent"
       }`}>
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between min-w-0">
           {/* Logo - Fades out on scroll */}
           <div
-            className={`flex items-center gap-0 whitespace-nowrap transition-all duration-300 ${
-              !isScrolled ? "opacity-100 visible" : "opacity-0 invisible"
+            className={`flex items-center gap-0 whitespace-nowrap transition-opacity duration-500 ease-in-out ${
+              !isScrolled ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
           >
             <span className="text-2xl font-bold text-black flex-shrink-0">NasA</span>
@@ -89,8 +91,8 @@ const Header = () => {
           {/* Contact Button - Visible on normal desktop screens */}
           <button
             onClick={() => window.open('https://api.whatsapp.com/send/?phone=27742448556&text&type=phone_number&app_absent=0', '_blank')}
-            className={`btn-primary hidden md:inline-flex transition-all duration-300 flex-shrink-0 ${
-              !isScrolled ? "opacity-100 visible" : "opacity-0 invisible"
+            className={`btn-primary hidden md:inline-flex transition-opacity duration-500 ease-in-out flex-shrink-0 ${
+              !isScrolled ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
           >
             Get in Touch
