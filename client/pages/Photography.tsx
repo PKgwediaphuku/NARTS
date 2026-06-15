@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback } from "react";
-import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { netlifyImage } from "@/lib/image";
+import Header from "@/components/Header";
 
 type Category = "Graduation" | "Sports" | "Colour Correction & Grading";
 
@@ -107,7 +107,6 @@ const BeforeAfterSlider = ({ before, after, alt }: ColourEdit) => {
 };
 
 const Photography = () => {
-  const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState<Category>("Graduation");
 
   const currentPhotos =
@@ -119,26 +118,7 @@ const Photography = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <div className="fixed top-0 w-full z-40 bg-white/80 backdrop-blur-md border-b border-gray-100">
-        <div className="max-w-7xl mx-auto container-padding flex items-center justify-between py-4">
-          <button
-            onClick={() => navigate("/")}
-            className="flex items-center gap-2 text-gray-700 hover:text-brand-purple transition-colors font-medium"
-          >
-            <ArrowLeft className="w-5 h-5" />
-            Back
-          </button>
-          <div className="flex items-center gap-0">
-            <span className="text-xl font-bold text-black">NasA</span>
-            <span className="text-xl font-bold" style={{ color: "#F5A623" }}>
-              rt
-            </span>
-            <span className="text-xl font-bold text-black">s</span>
-          </div>
-          <div className="w-16" />
-        </div>
-      </div>
+      <Header />
 
       {/* Page Content */}
       <div className="pt-24 pb-20">
