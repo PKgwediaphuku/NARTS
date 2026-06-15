@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const navItems = [
     { label: "Home", href: "#home" },
@@ -15,12 +18,30 @@ const Header = () => {
   ];
 
   const scrollToSection = (sectionId: string) => {
+    setIsMobileMenuOpen(false);
+
+    // When not on the home page, navigate there with the target section as a
+    // hash; the effect below scrolls to it once the home page has rendered.
+    if (location.pathname !== "/") {
+      navigate(`/#${sectionId}`);
+      return;
+    }
+
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
     }
   };
+
+  // Scroll to the hash target after arriving on the home page from another route.
+  useEffect(() => {
+    if (location.pathname === "/" && location.hash) {
+      const element = document.getElementById(location.hash.slice(1));
+      if (element) {
+        setTimeout(() => element.scrollIntoView({ behavior: "smooth" }), 0);
+      }
+    }
+  }, [location]);
 
   useEffect(() => {
     const handleScroll = () => {
