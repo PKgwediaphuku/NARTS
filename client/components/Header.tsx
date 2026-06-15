@@ -53,7 +53,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation with Gloss Effect - Always visible */}
-          <div className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-7 bg-white/30 backdrop-blur-md rounded-full px-5 lg:px-7 xl:px-10 py-4 border border-white/50 transition-all duration-300 font-medium flex-shrink">
+          <div className="hidden md:flex items-center gap-2 lg:gap-3 xl:gap-4 bg-white/30 backdrop-blur-md rounded-full px-4 lg:px-5 xl:px-6 py-4 border border-white/50 transition-all duration-300 font-medium flex-shrink">
             {navItems.map((item) => (
               <button
                 key={item.label}

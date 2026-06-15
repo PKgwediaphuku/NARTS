@@ -17,13 +17,14 @@ interface ColourEdit {
 }
 
 const gradPhotos: Photo[] = [
-  { src: "/images/photography/photo-1.jpg", alt: "Graduation" }, { src: "//images/photography/20260417171229_IMG_1394.jpg.jpeg", alt: "Graduation" }
-
+  { src: "/images/photography/20260417165428_IMG_1765.jpg.jpeg", alt: "Graduation" },
+  { src: "/images/photography/20260417171229_IMG_1394.jpg.jpeg", alt: "Graduation" },
+  { src: "/images/photography/20260417173126_IMG_1822.jpg.jpeg", alt: "Graduation" },
+  { src: "/images/photography/20260417173949_IMG_1835-BW.jpg.jpeg", alt: "Graduation" },
+  { src: "/images/photography/20260417173952_IMG_1413.jpg.jpeg", alt: "Graduation" },
 ];
 
-const sportsPhotos: Photo[] = [
-  { src: "/images/photography/photo-2.jpg", alt: "Sports" },
-];
+const sportsPhotos: Photo[] = [];
 
 const colourEdits: ColourEdit[] = [
   // Add before/after pairs here as { before: "/path/to/before.jpg", after: "/path/to/after.jpg", alt: "..." }
@@ -121,7 +122,7 @@ const Photography = () => {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <div className="fixed top-0 w-full z-40 bg-white/80 backdrop-blur-md border-b border-gray-100">
-        <div className="max-w-7xl mx-auto container-padding flex items-center justify-between py-4">
+        <div className="max-w-7xl mx-auto container-padding relative flex items-center py-4">
           <button
             onClick={() => navigate("/")}
             className="flex items-center gap-2 text-gray-700 hover:text-brand-purple transition-colors font-medium"
@@ -129,14 +130,13 @@ const Photography = () => {
             <ArrowLeft className="w-5 h-5" />
             Back
           </button>
-          <div className="flex items-center gap-0">
+          <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-0">
             <span className="text-xl font-bold text-black">NasA</span>
             <span className="text-xl font-bold" style={{ color: "#F5A623" }}>
               rt
             </span>
             <span className="text-xl font-bold text-black">s</span>
           </div>
-          <div className="w-16" />
         </div>
       </div>
 
@@ -186,30 +186,15 @@ const Photography = () => {
                   />
                 </div>
               ))}
-              {currentPhotos.length === 0 && (
-                <div className="col-span-3 text-center py-20 text-gray-400">
-                  <p className="text-sm font-medium uppercase tracking-wide">
-                    Images coming soon
-                  </p>
-                </div>
-              )}
             </div>
           )}
 
           {/* Before / After — Colour Correction & Grading */}
           {activeCategory === "Colour Correction & Grading" && (
             <div className="max-w-3xl mx-auto space-y-10">
-              {colourEdits.length > 0 ? (
-                colourEdits.map((edit, i) => (
-                  <BeforeAfterSlider key={i} {...edit} />
-                ))
-              ) : (
-                <div className="text-center py-20 text-gray-400">
-                  <p className="text-sm font-medium uppercase tracking-wide">
-                    Before &amp; after examples coming soon
-                  </p>
-                </div>
-              )}
+              {colourEdits.map((edit, i) => (
+                <BeforeAfterSlider key={i} {...edit} />
+              ))}
             </div>
           )}
 
