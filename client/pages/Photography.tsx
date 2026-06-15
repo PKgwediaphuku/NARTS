@@ -123,7 +123,7 @@ const Photography = () => {
       <Header />
 
       {/* Page Content */}
-      <div className="pt-24 pb-20">
+      <div className="pt-36 pb-20">
         <div className="max-w-7xl mx-auto container-padding">
           {/* Title */}
           <div className="text-center mb-10">
