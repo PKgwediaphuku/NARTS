@@ -2,6 +2,7 @@ import { useState, useRef, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { netlifyImage } from "@/lib/image";
 import Header from "@/components/Header";
+import LazyImage from "@/components/LazyImage";
 
 type Category = "Graduation" | "Sports" | "Colour Correction & Grading";
 
@@ -160,11 +161,9 @@ const Photography = () => {
                   key={index}
                   className="break-inside-avoid overflow-hidden rounded-xl"
                 >
-                  <img
+                  <LazyImage
                     src={netlifyImage(photo.src, { w: 800 })}
                     alt={photo.alt}
-                    className="w-full object-cover"
-                    loading="lazy"
                   />
                 </div>
               ))}

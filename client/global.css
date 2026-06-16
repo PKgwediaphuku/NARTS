@@ -122,6 +122,30 @@
   }
 }
 
+@layer utilities {
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .img-skeleton {
+    @apply relative overflow-hidden bg-gray-100;
+  }
+
+  .img-skeleton::after {
+    content: "";
+    @apply absolute inset-0 -translate-x-full;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.65),
+      transparent
+    );
+    animation: shimmer 1.6s infinite;
+  }
+}
+
 @layer components {
   .text-highlight {
     @apply text-brand-yellow font-bold;
