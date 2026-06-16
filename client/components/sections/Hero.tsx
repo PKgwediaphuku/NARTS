@@ -1,5 +1,6 @@
 import { IMAGES } from "@/config/images";
 import { netlifyImage } from "@/lib/image";
+import LazyImage from "@/components/LazyImage";
 
 const Hero = () => {
   return (
@@ -36,10 +37,13 @@ const Hero = () => {
 
           {/* Right Illustration */}
           <div className="flex justify-center items-center order-1 md:order-1 lg:order-2">
-            <img
+            <LazyImage
               src={netlifyImage(IMAGES.hero.illustration, { w: 1000 })}
               alt="Creative illustration"
-              className="w-full h-auto max-w-[500px]"
+              aspectRatio="1623 / 1173"
+              wrapperClassName="max-w-[500px] rounded-xl"
+              className="h-auto"
+              loading="eager"
             />
           </div>
         </div>

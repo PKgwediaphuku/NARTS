@@ -1,5 +1,6 @@
 import { IMAGES } from "@/config/images";
 import { netlifyImage } from "@/lib/image";
+import LazyImage from "@/components/LazyImage";
 
 const Community = () => {
   return (
@@ -11,11 +12,12 @@ const Community = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left Illustration */}
           <div className="flex justify-center items-center order-1 md:order-1 lg:order-1">
-            <img
+            <LazyImage
               src={netlifyImage(IMAGES.community.illustration, { w: 1000 })}
               alt="Community partnership illustration"
-              className="w-full h-auto max-w-[500px]"
-              loading="lazy"
+              aspectRatio="1 / 1"
+              wrapperClassName="max-w-[500px] rounded-xl"
+              className="h-auto"
             />
           </div>
 
