@@ -76,7 +76,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation with Gloss Effect - Always visible */}
-          <div className="hidden md:flex items-center gap-2 lg:gap-3 xl:gap-4 bg-white/30 backdrop-blur-md rounded-full px-4 lg:px-5 xl:px-7 py-3.5 border border-white/50 transition-all duration-300 font-medium flex-shrink">
+          <div className="hidden md:flex items-center gap-2 lg:gap-3 xl:gap-4 bg-white/30 backdrop-blur-md rounded-full px-4 lg:px-5 xl:px-7 py-3.5 border border-white/50 transition-all duration-500 ease-in-out font-medium flex-shrink">
             {navItems.map((item) => (
               <button
                 key={item.label}
@@ -113,8 +113,14 @@ const Header = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100">
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+          isMobileMenuOpen
+            ? "max-h-[28rem] opacity-100"
+            : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="bg-white border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-6 flex flex-col gap-5">
             {navItems.map((item) => (
               <button
@@ -133,7 +139,7 @@ const Header = () => {
             </button>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 };
