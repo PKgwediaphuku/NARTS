@@ -10,6 +10,7 @@ const projects = [
   { id: 4, image: IMAGES.projects.project4, title: "Project 4" },
   { id: 5, image: IMAGES.projects.project5, title: "Soweto Derby" },
   { id: 6, image: IMAGES.projects.project6, title: "Untitled Phily" },
+  { id: 7, image: IMAGES.projects.project7, title: "Untitled BB" },
 ];
 
 const Projects = () => {
