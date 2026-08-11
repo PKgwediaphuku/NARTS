@@ -1,6 +1,7 @@
 import { IMAGES } from "@/config/images";
 import { useNavigate } from "react-router-dom";
 import { netlifyImage } from "@/lib/image";
+import LazyImage from "@/components/LazyImage";
 
 interface ServiceCard {
   id: number;
@@ -86,11 +87,12 @@ const Services = () => {
             >
               {/* Service Icon */}
               <div className="mb-6 h-32 flex items-center justify-center rounded-lg">
-                <img
+                <LazyImage
                   src={netlifyImage(service.icon, { w: 224 })}
                   alt={service.name}
-                  className="h-28 w-28 object-contain"
-                  loading="lazy"
+                  fill
+                  wrapperClassName="h-28 w-28 rounded-lg"
+                  className="object-contain"
                 />
               </div>
 
