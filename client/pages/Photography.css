@@ -4,11 +4,10 @@
 .journal-frame:nth-child(4n + 3) { grid-column: 2 / 6; }
 .journal-frame:nth-child(4n + 4) { grid-column: 7 / 13; margin-top: 18%; }
 /* Portrait sports frames follow the editorial rhythm without oversized lead images. */
+.journal-gallery-sports { max-width: 656px; margin-inline: auto; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 16px; row-gap: 24px; }
 .journal-gallery-sports .journal-frame { width: 100%; max-width: 320px; justify-self: center; }
-.journal-gallery-sports .journal-frame:nth-child(4n + 1) { grid-column: 2 / 7; }
-.journal-gallery-sports .journal-frame:nth-child(4n + 2) { grid-column: 8 / 13; margin-top: 18%; }
-.journal-gallery-sports .journal-frame:nth-child(4n + 3) { grid-column: 1 / 6; }
-.journal-gallery-sports .journal-frame:nth-child(4n + 4) { grid-column: 7 / 12; margin-top: 18%; }
+.journal-gallery-sports .journal-frame:nth-child(n) { grid-column: auto; margin-top: 0; }
+.journal-gallery-sports .journal-frame:nth-child(even) { margin-top: 24px; }
 .journal-image { overflow: hidden; background: #f3f4f6; border-radius: 0.75rem; }
 .journal-image img { transition: transform .7s ease, opacity .7s ease; }
 @media (hover: hover) { .journal-frame:hover img { transform: scale(1.025); } }
@@ -16,6 +15,7 @@
 @keyframes journal-reveal { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 700px) {
   .journal-gallery { grid-template-columns: 1fr; row-gap: 36px; }
+  .journal-gallery-sports { row-gap: 16px; }
   .journal-frame:nth-child(n), .journal-gallery-sports .journal-frame:nth-child(n) { grid-column: 1; margin-top: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
