@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { netlifyImage } from "@/lib/image";
 import Header from "@/components/Header";
 import LazyImage from "@/components/LazyImage";
+import "./Photography.css";
 
 type Category = "Graduation" | "Sports" | "Colour Correction & Grading";
 
@@ -25,7 +26,12 @@ const gradPhotos: Photo[] = [
   { src: "/images/photography/20260417173952_IMG_1413.jpg.jpeg", alt: "Graduation" },
 ];
 
-const sportsPhotos: Photo[] = [];
+const sportsPhotos: Photo[] = [
+  { src: "/images/photography/IMG_9038.JPG.jpg", alt: "Sports photography — photo 1" },
+  { src: "/images/photography/IMG_9040.JPG.jpg", alt: "Sports photography — photo 2" },
+  { src: "/images/photography/IMG_9041.JPG.jpg", alt: "Sports photography — photo 3" },
+  { src: "/images/photography/IMG_9045.JPG.jpg", alt: "Sports photography — photo 4" },
+];
 
 const colourEdits: ColourEdit[] = [
   // Add before/after pairs here as { before: "/path/to/before.jpg", after: "/path/to/after.jpg", alt: "..." }
@@ -120,73 +126,67 @@ const Photography = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header — shared with the home page */}
       <Header />
-
-      {/* Page Content */}
-      <div className="pt-36 pb-20">
-        <div className="max-w-7xl mx-auto container-padding">
-          {/* Title */}
-          <div className="text-center mb-10">
-            <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
-            
-            </p>
-            <h1 className="text-4xl md:text-5xl font-bold">
-              Our <span className="text-highlight">Portfolio</span>
-            </h1>
-          </div>
-
-          {/* Category Tabs */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                  activeCategory === cat
-                    ? "bg-brand-yellow text-white shadow-sm"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          {/* Photo Grid — Graduation & Sports */}
-          {activeCategory !== "Colour Correction & Grading" && (
-            <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-              {currentPhotos.map((photo, index) => (
-                <div
-                  key={index}
-                  className="break-inside-avoid overflow-hidden rounded-xl"
-                >
-                  <LazyImage
-                    src={netlifyImage(photo.src, { w: 800 })}
-                    alt={photo.alt}
-                  />
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* Before / After — Colour Correction & Grading */}
-          {activeCategory === "Colour Correction & Grading" && (
-            <div className="max-w-3xl mx-auto space-y-10">
-              {colourEdits.map((edit, i) => (
-                <BeforeAfterSlider key={i} {...edit} />
-              ))}
-            </div>
-          )}
-
-          {/* Footer note */}
-          <div className="text-center mt-16">
-            <p className="text-gray-400 text-sm font-medium uppercase tracking-wide">
-              More work coming soon
-            </p>
-          </div>
+      <main className="max-w-7xl mx-auto container-padding pt-36 pb-20">
+        <div className="text-center mb-10">
+          <h1 className="text-4xl md:text-5xl font-bold">
+            Our <span className="text-highlight">Portfolio</span>
+          </h1>
         </div>
-      </div>
+
+        <nav className="flex flex-wrap justify-center gap-3 mb-12" aria-label="Photography collections">
+          {CATEGORIES.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              aria-pressed={activeCategory === cat}
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-purple ${
+                activeCategory === cat
+                  ? "bg-brand-yellow text-white shadow-sm"
+                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </nav>
+
+        <section aria-label={activeCategory} key={activeCategory}>
+          {activeCategory !== "Colour Correction & Grading" ? (
+            <div className={`journal-gallery${activeCategory === "Sports" ? " journal-gallery-sports" : ""}`}>
+              {currentPhotos.map((photo, index) => (
+                <figure key={photo.src} className="journal-frame" style={{ animationDelay: `${index * 90}ms` }}>
+                  <div className="journal-image">
+                    <LazyImage
+                      src={netlifyImage(photo.src, { w: 1200 })}
+                      alt={photo.alt}
+                      aspectRatio={activeCategory === "Sports" ? "2 / 3" : undefined}
+                    />
+                  </div>
+                  <figcaption>
+                    <span>{activeCategory} <span className="px-2 text-brand-yellow">/</span> {String(index + 1).padStart(2, "0")}</span>
+                    <span>NASARTS</span>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          ) : colourEdits.length > 0 ? (
+            <div className="max-w-3xl mx-auto grid gap-10">
+              {colourEdits.map((edit, i) => <BeforeAfterSlider key={i} {...edit} />)}
+            </div>
+          ) : (
+            <div className="text-center py-16 text-gray-500">
+              <p>Before & after colour stories are coming soon.</p>
+            </div>
+          )}
+        </section>
+
+        <footer className="text-center mt-16">
+          <p className="text-gray-400 text-sm font-medium uppercase tracking-wide">
+            More work coming soon
+          </p>
+        </footer>
+      </main>
     </div>
   );
 };
