@@ -153,12 +153,16 @@ const Photography = () => {
 
         <section aria-label={activeCategory} key={activeCategory}>
           {activeCategory !== "Colour Correction & Grading" ? (
-            <div className={`journal-gallery${activeCategory === "Sports" ? " journal-gallery-sports" : ""}`}>
+            <div className={activeCategory === "Sports" ? "journal-gallery journal-gallery-sports" : "columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4"}>
               {currentPhotos.map((photo, index) => (
-                <figure key={photo.src} className="journal-frame" style={{ animationDelay: `${index * 90}ms` }}>
-                  <div className="journal-image">
+                <figure
+                  key={photo.src}
+                  className={activeCategory === "Sports" ? "journal-frame" : "break-inside-avoid overflow-hidden rounded-xl"}
+                  style={activeCategory === "Sports" ? { animationDelay: `${index * 90}ms` } : undefined}
+                >
+                  <div className={activeCategory === "Sports" ? "journal-image" : undefined}>
                     <LazyImage
-                      src={netlifyImage(photo.src, { w: 1200 })}
+                      src={netlifyImage(photo.src, { w: activeCategory === "Sports" ? 1200 : 800 })}
                       alt={photo.alt}
                       aspectRatio={activeCategory === "Sports" ? "2 / 3" : undefined}
                     />
