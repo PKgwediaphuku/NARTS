@@ -163,20 +163,12 @@ const Photography = () => {
                       aspectRatio={activeCategory === "Sports" ? "2 / 3" : undefined}
                     />
                   </div>
-                  <figcaption>
-                    <span>{activeCategory} <span className="px-2 text-brand-yellow">/</span> {String(index + 1).padStart(2, "0")}</span>
-                    <span>NASARTS</span>
-                  </figcaption>
                 </figure>
               ))}
             </div>
-          ) : colourEdits.length > 0 ? (
+          ) : (
             <div className="max-w-3xl mx-auto grid gap-10">
               {colourEdits.map((edit, i) => <BeforeAfterSlider key={i} {...edit} />)}
-            </div>
-          ) : (
-            <div className="text-center py-16 text-gray-500">
-              <p>Before & after colour stories are coming soon.</p>
             </div>
           )}
         </section>

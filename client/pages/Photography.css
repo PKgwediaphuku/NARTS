@@ -11,8 +11,6 @@
 .journal-image { overflow: hidden; background: #f3f4f6; border-radius: 0.75rem; }
 .journal-image img { transition: transform .7s ease, opacity .7s ease; }
 @media (hover: hover) { .journal-frame:hover img { transform: scale(1.025); } }
-.journal-frame figcaption { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: #6b7280; }
-.journal-frame figcaption > span:last-child { font-size: 8px; letter-spacing: .18em; }
 
 @keyframes journal-reveal { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 700px) {
